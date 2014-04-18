@@ -1,0 +1,9 @@
+/* <-------Applikationens inställningar---------->*/
+html { 
+  background: url(../pics/paradise.png) no-repeat center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
