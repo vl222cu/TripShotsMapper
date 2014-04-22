@@ -24,6 +24,18 @@ header {
     padding-top: 1px;
 }
 
+#signin,
+#signout {
+    float:right;
+    margin-right: 55px;
+    font-size: 12px;
+}
+
+#signin_link,
+#signout_link {
+    font-size: 16px;
+}
+
 #menu a {
     display: inline-block;
     padding: 15px;
