@@ -1,9 +1,55 @@
 /* <-------Applikationens inställningar---------->*/
 html { 
-  background: url(../pics/paradise.png) no-repeat center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url(../pics/paradise.png) no-repeat center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "HappyMonkey", "Arial", sans-serif;
 
+}
+
+#maincontainer {
+    width: 1020px;
+    height: 800px;
+    margin: auto;
+    background-color: #FFF;
+    -moz-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
+    -webkit-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
+    box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
+}
+
+header {
+    margin-left: 55px;
+    padding-top: 1px;
+}
+
+#menu a {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#menu ul 
+{
+    list-style: none;
+}
+
+#menu > ul > li 
+{
+    float: left;
+}
+
+#current {
+    background: #CFFFA1;
+}
+
+footer {
+    font-size: 12px;
+    text-align: center;
+} 
+
+a:hover, a:focus {
+    background-color: #90C75D;
+    color: #FFF;
 }
