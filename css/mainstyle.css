@@ -9,6 +9,13 @@ html {
 
 }
 
+#map-canvas {
+        height: 60%;
+        margin-top: 100px;
+        margin-left: 55px;
+        margin-right: 55px;
+}
+
 #maincontainer {
     width: 1020px;
     height: 800px;
