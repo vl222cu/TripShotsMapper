@@ -11,9 +11,18 @@ html {
 
 #map-canvas {
         height: 60%;
+        display: block;
         margin-top: 100px;
         margin-left: 55px;
         margin-right: 55px;
+}
+
+#markmap-canvas {
+    height: 60%;
+    width: 90%;
+    margin-top: 100px;
+    margin-left: 55px;
+    padding: 0;
 }
 
 #maincontainer {

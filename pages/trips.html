@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<meta charset="UTF-8" />
  	<title>TripShotsMapper</title>
  	<link rel="stylesheet" href="../css/mainstyle.css" media="screen">
  	<link href='//fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
- 	 	
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=drawing"></script>
+    </script>
 </head>
     
     <body>
         <div id="maincontainer">
             <header id="mainheader">
         <h1>TripShotsMapper</h1>  
-        <p id="signout">
+    <!--    <p id="signout">
 			<a href="" id="signout_link">Sign Out</a>
-		</p>
+		</p> -->
         </header>
         
     <nav>
@@ -27,7 +29,9 @@
          </ul>
          </div>
     </nav>
+        <div id="markmap-canvas"></div>
         </div>
     </body>
     <footer id="footer" class="clear">Copyright &copy; 2014 TripShotsMapper - All rights reserved</footer>
+    <script src="markermap.js"></script>
 </html>
