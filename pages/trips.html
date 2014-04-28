@@ -6,6 +6,7 @@
  	<title>TripShotsMapper</title>
  	<link rel="stylesheet" href="../css/mainstyle.css" media="screen">
  	<link href='//fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
+ 	<script src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=drawing"></script>
     </script>
@@ -34,4 +35,7 @@
     </body>
     <footer id="footer" class="clear">Copyright &copy; 2014 TripShotsMapper - All rights reserved</footer>
     <script src="markermap.js"></script>
+    <script> var myDataRef = new Firebase('https://popping-fire-9647.firebaseio.com/'); 
+        myDataRef.set("I am now writing data into Firebase!");
+    </script>
 </html>
