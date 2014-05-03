@@ -48,7 +48,8 @@ header {
 }
 
 #signin_link,
-#signout_link {
+#signout_link,
+#signup_link {
     font-size: 16px;
 }
 
@@ -84,7 +85,7 @@ a:hover, a:focus {
 
 /* <-------Inloggningsinställningar---------->*/
 #logincontainer {
-    position: fixed;
+    position: relative;
     width: 340px;
     height: 280px;
     margin-left: 55px;

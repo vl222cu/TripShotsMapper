@@ -9,8 +9,8 @@
  	<script src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  	<script type='text/javascript'
-        src='https://cdn.firebase.com/js/simple-login/1.3.2/firebase-simple-login.js'>
-</script>
+        src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
+    </script>
  	 	
 </head>
     
@@ -20,20 +20,22 @@
                 <h1>TripShotsMapper</h1>  
                 <h2>Sign In</h2>
             </header>
+            
             <div id="logincontainer">
                 <form name="login">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="userid"/>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="userid"/>
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password"/>
                     <div id="lower">
-                    <input type="button" value="Sign In"/>
-                    <input type="reset" value="Cancel"/>
+                    <input type="button" id="loginButton" value="Sign In"/>
+                    <input type="button" id="regButton" value="Join"/>
                     </div>
-                </form>
+                </form> 
             </div>
         </div>
         <footer id="footer" class="clear">Copyright &copy; 2014 TripShotsMapper - All rights reserved</footer>
         <script src="signin.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

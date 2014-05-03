@@ -7,7 +7,7 @@
  	<link rel="stylesheet" href="../css/mainstyle.css" media="screen">
  	<link href='//fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
  	<script src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
- 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ 	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
  	<script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCSNQQratS3exHTepCOW0ZqsHs39J6wM4&sensor=false">
     </script>
@@ -18,10 +18,9 @@
         <div id="maincontainer">
             <header>
                 <h1>TripShotsMapper</h1>  
-                <p id="signin">
-						Have an account?<br />
-						<a href="signin.html" id="signin_link">Sign In</a>
-					</p>
+                <div id="signin">
+						<a href="signin.html" id="signin_link">Sign In</a> | <a href="reg.html" id="signup_link">Join</a>
+					</div>
             </header>
     <nav>
         <div id="menu">
@@ -36,6 +35,5 @@
         </div>
         <footer id="footer" class="clear">Copyright &copy; 2014 TripShotsMapper - All rights reserved</footer>
         <script src="map.js"></script>
-        <script> var myDataRef = new Firebase('https://popping-fire-9647.firebaseio.com/'); </script>
     </body>
 </html>

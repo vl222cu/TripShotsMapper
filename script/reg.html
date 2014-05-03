@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta charset="UTF-8" />
+ 	<title>TripShotsMapper</title>
+ 	<link rel="stylesheet" href="../css/mainstyle.css" media="screen">
+ 	<link href='//fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
+ 	<script src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
+ 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ 	<script type='text/javascript'
+        src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
+    </script>
+ 	 	
+</head>
+    
+    <body>
+        <div id="maincontainer">
+            <header>
+                <h1>TripShotsMapper</h1>  
+                <h2>Sign up and get started!</h2>
+            </header>
+            
+            <div id="signupcontainer">
+                <form name="register">
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td><label for="email">Email Address*:</label> </td>
+                                <td><input id="email" maxlength="45" name="email" type="text" /></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="password">Password*:</label></td>
+                                <td><input id="password" maxlength="45" name="password" type="password" /></td>
+                            </tr>
+
+                            <tr>
+                                <td><button id="registerButton">login</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <footer id="footer" class="clear">Copyright &copy; 2014 TripShotsMapper - All rights reserved</footer>
+        <script src="reg.js"></script>
+    </body>
+</html>
