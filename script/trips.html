@@ -15,27 +15,28 @@
     <body>
         <div id="maincontainer">
             <header id="mainheader">
-        <h1>TripShotsMapper</h1>  
-    <!--    <p id="signout">
-			<a href="" id="signout_link">Sign Out</a>
-		</p> -->
-        </header>
-        
-    <nav>
-        <div id="menu">
-        <ul>
-            <li><a href="index.html">Hem</a></li>
-            <li><a href="trips.html" id="current">My Trips</a></li>
-            <li><a href="pictures.html">My Pictures</a></li>
-         </ul>
-         </div>
-    </nav>
-        <div id="markmap-canvas"></div>
+                <h1>TripShotsMapper</h1>  
+        <!--    <p id="signout">
+			        <a href="" id="signout_link">Sign Out</a>
+		        </p> -->
+            </header>
+            <nav>
+                <div id="menu">
+                    <ul>
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="trips.html" id="current">My Trips</a></li>
+                        <li><a href="pictures.html">My Pictures</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="buttonWrapper">
+                <button id="saveButton">Save item</button>
+                <button id="editButton">Edit item</button>
+                <button id="removeButton">Remove item</button>
+            </div>
+            <div id="markmap-canvas"></div>
         </div>
     </body>
     <footer id="footer" class="clear">Copyright &copy; 2014 TripShotsMapper - All rights reserved</footer>
     <script src="markermap.js"></script>
-    <script> var myDataRef = new Firebase('https://popping-fire-9647.firebaseio.com/'); 
-        myDataRef.set("I am now writing data into Firebase!");
-    </script>
 </html>

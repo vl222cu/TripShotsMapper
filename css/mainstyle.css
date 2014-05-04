@@ -20,9 +20,14 @@ html {
 #markmap-canvas {
     height: 60%;
     width: 90%;
-    margin-top: 100px;
+    margin-top: 10px;
     margin-left: 55px;
     padding: 0;
+}
+
+#buttonWrapper {
+    margin-top: 100px;
+    margin-left: 55px;
 }
 
 #maincontainer {
