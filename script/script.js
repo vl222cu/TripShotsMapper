@@ -14,4 +14,3 @@ window.onload = function () {
     login.addEventListener("click", function () {
         doLogin();
     }, false);
-}
