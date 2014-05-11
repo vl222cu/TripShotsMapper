@@ -1,5 +1,7 @@
 "use strict";
-var google;
+var Firebase,
+google,
+myRef = new Firebase("https://popping-fire-9647.firebaseio.com");
 
 function initialize() {
         var mapOptions = {
