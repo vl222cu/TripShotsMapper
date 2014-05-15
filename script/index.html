@@ -11,6 +11,10 @@
  	<script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCSNQQratS3exHTepCOW0ZqsHs39J6wM4&sensor=false">
     </script>
+    <script type='text/javascript'
+        src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
+    </script>
+    
  	 	
 </head>
     
@@ -19,7 +23,8 @@
             <header>
                 <h1>TripShotsMapper</h1>  
                 <div id="signin">
-						<a href="signin.html" id="signin_link">Sign In</a> | <a href="reg.html" id="signup_link">Join</a>
+						<a href="#" id="signin_link">Sign In | Join</a>
+						<a href="#" id="signout_link">Sign Out</a>
 					</div>
             </header>
     <nav>
@@ -33,7 +38,10 @@
     </nav>
         <div id="map-canvas"></div>
         </div>
+        
         <footer id="footer" class="clear">Copyright &copy; 2014 TripShotsMapper - All rights reserved</footer>
-        <script src="map.js"></script>
+        <script src="simplelogin.js"></script>
+        <script src="modal.js"></script>
+        <script src="addmarker.js"></script>
     </body>
 </html>

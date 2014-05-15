@@ -11,6 +11,7 @@ html {
 
 #map-canvas {
         height: 60%;
+        width: 60%;
         display: block;
         margin-top: 100px;
         margin-left: 55px;
@@ -31,8 +32,8 @@ html {
 }
 
 #maincontainer {
-    width: 1020px;
-    height: 800px;
+    width: 1100px;
+    height: 1000px;
     margin: auto;
     background-color: #FFF;
     -moz-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
@@ -45,8 +46,11 @@ header {
     padding-top: 1px;
 }
 
-#signin,
-#signout {
+#signout_link {
+    display: none;
+}
+
+#signin {
     float:right;
     margin-right: 55px;
     font-size: 12px;
@@ -88,19 +92,105 @@ a:hover, a:focus {
     color: #FFF;
 }
 
+
+/* <-------fotogalleriinställningar---------->*/
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}
+  
+#inputDiv {
+    margin-top: 200px;
+    margin-left: 55px;
+}
+  
+
+/*<------------Modala popupens inställningar------------>*/
+.modal {
+    background-color: white;
+    color: black;
+    border: 1px solid gray;
+    padding: 20px;
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 500px;
+    width: 400px;
+    height: 300px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.03, #DDD), color-stop(1, #FFF)); 
+    background: -webkit-linear-gradient(top, #DDD 30%, #FFF 100%);
+    background: -moz-linear-gradient(top, #DDD 30%, #FFF 100%);
+    background: -o-linear-gradient(top, #DDD 30%, #FFF 100%);
+	background: linear-gradient(#DDD 30%, #FFF 100%);
+	-moz-box-shadow: rgba(0,0,0, 0.3) 0 0 8px;  
+    -webkit-box-shadow: rgba(0,0,0, 0.3) 0 0 8px;
+    box-shadow: rgba(0,0,0, 0.3) 0 0 8px; 
+    -webkit-border-radius: 5px;  
+    -moz-border-radius: 5px;  
+    border-radius: 5px;
+    font-family: "Verdana", "Arial", sans-serif;
+    font-size: 12px;
+}
+
+.modal button {
+    margin-top: 35px;
+    margin-right: 5px;
+    padding: 3px;
+    font-family: "Verdana", "Arial", sans-serif;
+    font-size: 11px;
+    color: #FFF;
+	-moz-box-shadow: 0 0 4px 0 #777;
+	-webkit-box-shadow: 0 0 4px 0 #777;
+	box-shadow: 0 0 4px 0 #777;
+    -webkit-border-radius: 10px;  
+    -moz-border-radius: 10px;  
+    border-radius: 10px;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #90C75D), color-stop(1, #CFFFA1) );
+	background: -webkit-linear-gradient(top, #90C75D 5%, #CFFFA1 100%);
+	background:-moz-linear-gradient( center top, #90C75D 5%, #CFFFA1 100% );
+	background: -o-linear-gradient(top, #90C75D 5%, #CFFFA1 100%);
+	background: linear-gradient(#90C75D 5%, #CFFFA1 100%);
+}
+
+#btnsignin {
+    margin-left: 20px;
+}
+
+#btnsignin:hover,
+#btnjoin:hover {
+    color: #4B9962;
+}
+
+.background {
+    background-color: black;
+    opacity: 1;
+    filter:Alpha(opacity=90);
+    background-color: rgba(0,0,0,0.90);
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+}
+
 /* <-------Inloggningsinställningar---------->*/
 #logincontainer {
     position: relative;
     width: 340px;
     height: 280px;
-    margin-left: 55px;
-    color: #444;   
+    margin-left: 30px;
+    margin-top: 10px;
     -webkit-font-smoothing: antialiased;    
-    background: #f0f0f0;
-    background: #CFFFA1;
     border-radius: 3px;
     border: 1px solid #ccc;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+#signin {
+    text-align: center;
 }
 
 form {
@@ -121,8 +211,9 @@ input {
     font-size: 12px;
     outline: none;
 }
-input[type=text],
-input[type=password] {
+
+#email,
+#password {
     color: #777;
     padding-left: 10px;
     margin: 10px;
@@ -139,10 +230,10 @@ input[type=password] {
     transition: all .4s ease;
 }
 
-input[type=text]:hover,
-input[type=password]:hover,
-input[type=text]:focus,
-input[type=password]:focus {
+#email:hover,
+#password:hover,
+#email:focus,
+#password:focus {
     border: 1px solid #90C75D;
     box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .7), 0 0 0 5px #56D4D3;
 }
@@ -152,74 +243,4 @@ input[type=password]:focus {
     width: 100%;
     height: 69px;
     margin-top: 20px;
-}
-
-input[type=checkbox] {
-    margin-left: 20px;
-    margin-top: 30px;
-}
-
-input[type=button],
-input[type=reset] {
-    float: right;
-    margin-right: 20px;
-    margin-top: 20px;
-    width: 80px;
-    height: 30px;
-    -webkit-border-radius: 5px;  
-    -moz-border-radius: 5px;  
-    border-radius: 5px;
-
-	background: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0, rgb(237,237,237)),
-		color-stop(0.41, rgb(217,217,217)),
-		color-stop(1, rgb(255,255,255))
-	);
-	background: -webkit-linear-gradient( 
-	    center bottom,
-		rgb(237,237,237) 0%,
-		rgb(217,217,217) 41%,
-		rgb(255,255,255) 100%
-	);
-	background: -moz-linear-gradient(
-		center bottom,
-		rgb(237,237,237) 0%,
-		rgb(217,217,217) 41%,
-		rgb(255,255,255) 100%
-	);
-	background: -o-linear-gradient(
-	    center bottom,
-		rgb(237,237,237) 0%,
-		rgb(217,217,217) 41%,
-		rgb(255,255,255) 100%
-	);
-}
-
-input[type=button]:hover,
-input[type=reset]:hover {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ff), to(#6ec2e8));
-    background-image: -moz-linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-    background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-}
-input[type=button]:active,
-input[type=reset]:active {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#6ec2e8), to(#b6e2ff));
-    background-image: -moz-linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
-    background-image: linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
-}
-
-input[type=submit]:hover,
-input[type=reset]:hover {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ff), to(#6ec2e8));
-    background-image: -moz-linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-    background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-}
-input[type=submit]:active,
-input[type=reset]:active {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#6ec2e8), to(#b6e2ff));
-    background-image: -moz-linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
-    background-image: linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
 }
