@@ -50,8 +50,8 @@ function register () {
   
 function doLogin(email, password) {
     authClient.login('password', {
-        email: $("#email").val(),
-        password: $("#password").val()
+        email: $("#emailInput").val(),
+        password: $("#passwordInput").val()
     });
     removeValue();
     removeModal();
@@ -60,7 +60,7 @@ function doLogin(email, password) {
 } 
 
 function signout () {
-    clearMarkers();
+    initialize();
     authClient.logout();
     $('#signin_link').show();
     $('#signout_link').hide();

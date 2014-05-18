@@ -31,12 +31,13 @@ var ModalLogin = {
             emailTag.id = "emailTag";
             emailTag.textContent = "Email";
             var emailInput = document.createElement("input");
-            emailInput.id = "email";
+            emailInput.id = "emailInput";
             var passwordTag = document.createElement("label");
             passwordTag.id = "passwordTag";
             passwordTag.textContent = "Password";
             var passwordInput = document.createElement("input");
-            passwordInput.id = "password";
+            passwordInput.id = "passwordInput";
+            passwordInput.type = "password";
 
             // Lägger till alla p-taggar i modala popupen
             wrapper.appendChild(signinForm);

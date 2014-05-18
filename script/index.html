@@ -14,7 +14,6 @@
     <script type='text/javascript'
         src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
     </script>
-    
  	 	
 </head>
     
@@ -23,25 +22,29 @@
             <header>
                 <h1>TripShotsMapper</h1>  
                 <div id="signin">
-						<a href="#" id="signin_link">Sign In | Join</a>
+						<a href="#" id="signin_link">Sign In | Register</a>
 						<a href="#" id="signout_link">Sign Out</a>
 					</div>
             </header>
     <nav>
         <div id="menu">
         <ul>
-            <li><a href="index.html" id="current">Hem</a></li>
-            <li><a href="trips.html">My Trips</a></li>
+            <li><a href="index.html" id="current">My Trips</a></li>
             <li><a href="pictures.html">My Pictures</a></li>
          </ul>
          </div>
     </nav>
+        <div id="buttonWrapper">
+                <button id="saveButton">Save marker</button>
+                <button id="editButton">Edit marker</button>
+                <button id="removeButton">Remove marker</button>
+            </div>
         <div id="map-canvas"></div>
         </div>
         
         <footer id="footer" class="clear">Copyright &copy; 2014 TripShotsMapper - All rights reserved</footer>
+        <script src="addmarker.js"></script>
         <script src="simplelogin.js"></script>
         <script src="modal.js"></script>
-        <script src="addmarker.js"></script>
     </body>
 </html>
