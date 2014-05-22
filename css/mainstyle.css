@@ -10,16 +10,24 @@ html {
 }
 
 #map-canvas {
-        height: 60%;
-        width: 60%;
-        display: block;
-        margin-top: 10px;
-        margin-left: 55px;
-        margin-right: 55px;
+    height: 60%;
+    width: 60%;
+    display: block;
+    margin-top: 25px;
+    margin-left: 55px;
+    margin-right: 55px;
+    background-color: #FFF;
+    -moz-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
+    -webkit-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
+    box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
 }
 
-#buttonWrapper {
-    margin-top: 100px;
+#messageWrapper {
+    margin-top: 80px;
+    margin-left: 55px;
+}
+
+#buttonWrapper {;
     margin-left: 55px;
 }
 
@@ -49,8 +57,7 @@ header {
 }
 
 #signin_link,
-#signout_link,
-#signup_link {
+#signout_link {
     font-size: 16px;
 }
 
@@ -78,6 +85,18 @@ nav {
     background: #CFFFA1;
 }
 
+#message {
+    color: #36B9EB;
+    font-weight: 900;
+}
+
+#infotext {
+    margin-left: 55px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: gray;
+}
+
 footer {
     font-size: 12px;
     text-align: center;
@@ -98,6 +117,10 @@ a:hover, a:focus {
   
 #inputDiv {
     margin-top: 200px;
+    margin-left: 55px;
+}
+
+#outputDiv {
     margin-left: 55px;
 }
   
@@ -134,7 +157,10 @@ a:hover, a:focus {
     margin-top: 200px;
 }
 
-.modal button {
+.modal button,
+#saveButton, 
+#signin_link,
+#signout_link {
     margin-top: 35px;
     margin-right: 5px;
     padding: 3px;
@@ -159,7 +185,8 @@ a:hover, a:focus {
 }
 
 #btnsignin:hover,
-#btnjoin:hover {
+#btnjoin:hover,
+#saveButton:hover {
     color: #4B9962;
 }
 
@@ -175,6 +202,18 @@ a:hover, a:focus {
     top: 0;
     left: 0;
     color: white;
+}
+
+#cancelButton {
+float: right;
+}
+
+#cancelButton:hover {
+    -ms-transform:scale(1.2); 
+    -moz-transform:scale(1.2);
+    -webkit-transform:scale(1.2); 
+    -o-transform:scale(1.2); 
+    transform:scale(1.2);
 }
 
 /* <-------Inloggningsinställningar---------->*/

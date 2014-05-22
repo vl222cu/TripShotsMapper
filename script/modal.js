@@ -21,7 +21,14 @@ var ModalLogin = {
             buttonJoin.id = "btnjoin";
             buttonJoin.textContent = "Register";
             
-            // Skapar textrad i popupen för samtliga fälten
+            // Skapar cancelknappen
+            var cancelButton = document.createElement("a");
+            var imgClose = document.createElement("img");
+            imgClose.id = "cancelButton";
+            imgClose.setAttribute("src", "../pics/button_cancel.png");
+            imgClose.alt = "Close";
+            
+            // Skapar textfält för inloggning
             var wrapper = document.createElement("div");
             wrapper.id = "logincontainer";
             var signinForm = document.createElement("form");
@@ -39,7 +46,9 @@ var ModalLogin = {
             passwordInput.id = "passwordInput";
             passwordInput.type = "password";
 
-            // Lägger till alla p-taggar i modala popupen
+            // Lägger till alla taggar i modala popupen
+            cancelButton.appendChild(imgClose);
+            modalDiv.appendChild(cancelButton);
             wrapper.appendChild(signinForm);
             wrapper.appendChild(emailTag);
             wrapper.appendChild(emailInput);
@@ -58,6 +67,13 @@ var ModalLogin = {
             
             buttonJoin.addEventListener("click", function() {
                 register();
+            }, false);
+            
+            cancelButton.addEventListener("click", function () {
+                var cancelModal = document.getElementById("modalDiv");
+                var cancelbground = document.getElementById("bground");
+                cancelModal.remove();
+                cancelbground.remove();
             }, false);
         }  
         var signin_link = document.getElementById("signin_link");
