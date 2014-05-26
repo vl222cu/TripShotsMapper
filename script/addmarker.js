@@ -16,13 +16,13 @@ function initialize () {
         placeMarker(event.latLng);
     });
 }
-    
+    // Från https://developers.google.com/maps/documentation/javascript/events
     function placeMarker (location, html) {
         var marker = new google.maps.Marker({
             position : location,
             map : map,
             draggable: true,
-            html: "Skriv gärna en kommentar!",
+            html: html,
             icon : '../pics/pinkpin.png'
         });
         
@@ -31,11 +31,12 @@ function initialize () {
         // Skapar kommentarsbox
         var htmlBox = document.createElement("div");
         htmlBox.id = "htmlbox";
-        htmlBox.innerHTML = marker.html || "";
+        htmlBox.innerHTML = marker.html || "Do write a comment!";
         var textBox = document.createElement("textarea");
         textBox.id = "textbox";
-        textBox.innerText = marker.html || "";
+        textBox.innerText = marker.html || "Do write a comment!";
         var editBtn = document.createElement("button");
+        editBtn.id = "editBtn";
         editBtn.innerText = "Edit comment";
         var container = document.createElement("div");
         container.id = "infocontainer";
@@ -71,10 +72,15 @@ function initialize () {
         marker.set("html", textBox.value);
     });
     
+    google.maps.event.addListener(marker, "rightclick", function() {
+        if (marker.getDraggable()) {
+            marker.setMap(null);
+        } 
+    }); 
+    
     var saveButton = document.getElementById("saveButton");
     google.maps.event.addDomListener(saveButton, 'click', function() {
         saveData(marker);
-        marker.setDraggable(false);
     });
 }
         

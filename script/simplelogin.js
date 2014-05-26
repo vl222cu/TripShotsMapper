@@ -56,7 +56,7 @@ function register () {
             messages('Welcome to TripShotsmapper ' + user.email + '! Continue to sign in and start to map your trips!');
             console.log('User Id: ' + user.uid + ', Email: ' + user.email);
         } else {
-            alert(error);
+            messages(error);
         }
     });
 }
@@ -70,6 +70,7 @@ function doLogin(email, password) {
     removeModal();
     $('#signin_link').hide();
     $('#signout_link').show();
+    readData();
     messages('You are now logged in. Welcome to TripShotsmapper!');
 } 
 
@@ -83,28 +84,32 @@ function signout () {
 }
 
 function saveData (marker) {
-    var userRef = poppingFireRef.child('users/' + useruId + '/markers');
-    var markerRef = userRef.push();
-    markerRef.set({position: marker.getPosition().toUrlValue(), comment: marker.html});
-    messages('Location added.');
-    
-    // Högerklicka för att ta bort markör
-    google.maps.event.addListener(marker, "rightclick", function() {
-        if (marker.getDraggable()) {
-            marker.setMap(null);
-        } else {
+    if (useruId != undefined) {
+        var userRef = poppingFireRef.child('users/' + useruId + '/markers');
+        var markerRef = userRef.push();
+        markerRef.set({position: marker.getPosition(), comment: marker.html});
+        marker.setDraggable(false);
+        messages('Location added.');
+        
+        // Högerklicka för att ta bort markör från Firebase
+        google.maps.event.addListener(marker, "rightclick", function() {
             markerRef.remove();
             marker.setMap(null);
-        }
-    });
+        });
+    } else {
+        messages('Please sign in in order to save the data.');
+    }
 }
 
 function readData () {
     var userRef = poppingFireRef.child('users/' + useruId + '/markers');
     userRef.on('child_added', function(snapshot) {
-        var userData = snapshot.val();
+        var userLocation = snapshot.child('position').val();
+        var userComment = snapshot.child('comment').val();
+        var mylatLng = new google.maps.LatLng(parseFloat(userLocation.k), parseFloat(userLocation.A));
+        placeMarker(mylatLng, userComment);
       
-        console.log('Läst in '+ userData.position + ' and ' + userData.comment);
+        console.log('Läst in '+ mylatLng + ' and ' + userComment);
     });
 
 }
