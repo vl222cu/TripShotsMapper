@@ -8,31 +8,38 @@ password,
 useruId,
 $;
 
+// Skapar Firebasereferens
 var poppingFireRef = new Firebase("https://popping-fire-9647.firebaseio.com");
+
+// Kontroll av inloggningsstatus
 var authClient = new FirebaseSimpleLogin(poppingFireRef, function(error, user) {
     if (error) {
-        // an error occurred while attempting login
+        // Fel vid inloggning
+        messages(error);
         console.log(error);
     } else if (user) {
+        // Användaren är inloggad och verifierad i Firebase
         useruId = user.uid;
-        // user authenticated with Firebase
         console.log('User ID: ' + user.uid + ', Provider: ' + user.provider);
     } else {
-        // user is logged out
+        // Användaren är inte inloggad
         console.log('Not logged in');
     }
 });
 
+// Funktion för borttag av text i textrutorna för modala popupen
 function removeValue () {
     $('#email').val('');
     $('#password').val('');
 }
 
+// Funktion för borttag av modala popupen
 function removeModal () {
     $('#modalDiv').remove();
     $('#bground').remove();
 }
 
+// Funktion för utskrift av meddelanden
 function messages(msg) {
     $(document).ready(function () {
         $('#message').text(msg);
@@ -46,6 +53,7 @@ function messages(msg) {
     });
 }
 
+// Registreringsfunktion i Firebase
 function register () {
     email = $('#emailInput').val();
     password = $('#passwordInput').val();
@@ -60,7 +68,8 @@ function register () {
         }
     });
 }
-  
+
+// Inloggningsfunktion i Firebase 
 function doLogin(email, password) {
     authClient.login('password', {
         email: $("#emailInput").val(),
@@ -70,37 +79,49 @@ function doLogin(email, password) {
     removeModal();
     $('#signin_link').hide();
     $('#signout_link').show();
-    readData();
+    $('#saveButton').show();
+    $('#showButton').show();
     messages('You are now logged in. Welcome to TripShotsmapper!');
+    
+    var showButton = document.getElementById("showButton");
+    google.maps.event.addDomListener(showButton, 'click', function() {
+        readData();
+    });
 } 
 
+// Utloggningsfunktion i Firebase
 function signout () {
     initialize();
     authClient.logout();
     $('#signin_link').show();
     $('#signout_link').hide();
+    $('#saveButton').hide();
+    $('#showButton').hide();
     messages('You are now signed out. Visit us again soon!');
     console.log('Logged out');
 }
 
+// Spararfunktion i Firebase
 function saveData (marker) {
-    if (useruId != undefined) {
+    if (useruId !== undefined) {
         var userRef = poppingFireRef.child('users/' + useruId + '/markers');
         var markerRef = userRef.push();
         markerRef.set({position: marker.getPosition(), comment: marker.html});
         marker.setDraggable(false);
-        messages('Location added.');
-        
-        // Högerklicka för att ta bort markör från Firebase
+        messages('The location has been successfully saved!');
+            
+        // Kopplar högerklickevent till markören för att ta bort den från Firebase
         google.maps.event.addListener(marker, "rightclick", function() {
             markerRef.remove();
             marker.setMap(null);
+            messages('The marker has been successfully removed!');
         });
     } else {
         messages('Please sign in in order to save the data.');
     }
 }
 
+// Hämtning av data från Firebase
 function readData () {
     var userRef = poppingFireRef.child('users/' + useruId + '/markers');
     userRef.on('child_added', function(snapshot) {
@@ -111,7 +132,6 @@ function readData () {
       
         console.log('Läst in '+ mylatLng + ' and ' + userComment);
     });
-
 }
 
 

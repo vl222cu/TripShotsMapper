@@ -1,4 +1,4 @@
-/* <-------Applikationens inställningar---------->*/
+/* <-------Applikationens huvudinställningar---------->*/
 html { 
     background: url(../pics/paradise.png) no-repeat center fixed; 
     -webkit-background-size: cover;
@@ -9,31 +9,9 @@ html {
 
 }
 
-#map-canvas {
-    height: 60%;
-    width: 60%;
-    display: block;
-    margin-top: 25px;
-    margin-left: 55px;
-    margin-right: 55px;
-    background-color: #FFF;
-    -moz-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
-    -webkit-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
-    box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
-}
-
-#messageWrapper {
-    margin-top: 80px;
-    margin-left: 55px;
-}
-
-#buttonWrapper {;
-    margin-left: 55px;
-}
-
 #maincontainer {
     width: 1100px;
-    height: 1000px;
+    height: 1010px;
     margin: auto;
     background-color: #FFF;
     -moz-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
@@ -44,6 +22,34 @@ html {
 header {
     margin-left: 55px;
     padding-top: 1px;
+}
+
+
+#logoWrapper {
+    float: left;
+    margin-top: 20px;
+    margin-right: -20px;
+    margin-left: -20px;
+}
+
+#logo {
+    width: 110px;
+}
+
+h1 {
+    font-size: 55px;
+    color: #444444;
+    text-shadow: -1px -1px 1px #000, 3px 3px 3px #AAA;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to(rgba(0,0,0,1)));
+}
+
+#messageWrapper {
+    margin-top: 100px;
+    margin-left: 55px;
+}
+
+#buttonWrapper {;
+    margin-left: 55px;
 }
 
 #signout_link {
@@ -95,6 +101,63 @@ nav {
     margin-top: 10px;
     margin-bottom: 10px;
     color: gray;
+    position:relative;
+    padding:25px;
+    width: 940px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    -moz-box-shadow:1px 1px 0 0 #FFF, 5px 5px 40px 2px #BBB inset;
+	-webkit-box-shadow: 1px 1px 0 0 #FFF, 5px 5px 40px 2px #BBB inset;
+	box-shadow: 1px 1px 0 0 #FFF, 5px 5px 40px 2px #BBB inset;
+}
+
+#infotext:after
+{
+	content:"";
+	position:absolute;
+	bottom:-20px; 
+	margin-left:50px; 
+	border-width:20px 0 0 20px; 
+	border-style:solid;
+	border-color:#E0E0D1 transparent;
+    display:block; 
+    width:0;
+}
+
+#showButton,
+#saveButton {
+    margin-top: 35px;
+    margin-right: 5px;
+    padding: 3px;
+    font-family: "Verdana", "Arial", sans-serif;
+    font-size: 11px;
+    color: #FFF;
+	-moz-box-shadow: 0 0 4px 0 #777;
+	-webkit-box-shadow: 0 0 4px 0 #777;
+	box-shadow: 0 0 4px 0 #777;
+    -webkit-border-radius: 10px;  
+    -moz-border-radius: 10px;  
+    border-radius: 10px;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #90C75D), color-stop(1, #CFFFA1) );
+	background: -webkit-linear-gradient(top, #90C75D 5%, #CFFFA1 100%);
+	background:-moz-linear-gradient( center top, #90C75D 5%, #CFFFA1 100% );
+	background: -o-linear-gradient(top, #90C75D 5%, #CFFFA1 100%);
+	background: linear-gradient(#90C75D 5%, #CFFFA1 100%);
+    display: none;
+}
+
+#map-canvas {
+    height: 55%;
+    width: 90%;
+    display: block;
+    margin-top: 40px;
+    margin-left: 55px;
+    margin-right: 55px;
+    background-color: #FFF;
+    -moz-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
+    -webkit-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
+    box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
 }
 
 footer {
@@ -158,7 +221,6 @@ a:hover, a:focus {
 }
 
 .modal button,
-#saveButton, 
 #signin_link,
 #signout_link {
     margin-top: 35px;
@@ -184,8 +246,8 @@ a:hover, a:focus {
     margin-left: 20px;
 }
 
-#btnsignin:hover,
-#btnjoin:hover,
+#signin_link:hover,
+#signout_link:hover,
 #saveButton:hover {
     color: #4B9962;
 }

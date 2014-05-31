@@ -6,6 +6,7 @@
  	<title>TripShotsMapper</title>
  	<link rel="stylesheet" href="../css/mainstyle.css" media="screen">
  	<link href='//fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
+ 	<link rel="shortcut icon" href="../pics/favicon.ico">
  	<script src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
  	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
  	<script type="text/javascript"
@@ -20,7 +21,8 @@
     <body>
         <div id="maincontainer">
             <header>
-                <h1>TripShotsMapper</h1>  
+                <div id="logoWrapper"><img src="../pics/sandals.png" alt="sandals" id="logo"/></div>
+                <h1>TripShotsMapper</h1>
                 <div id="signin">
 						<a href="#" id="signin_link">Sign In | Register</a>
 						<a href="#" id="signout_link">Sign Out</a>
@@ -39,14 +41,16 @@
         </div>
         <div id="buttonWrapper">
                 <button id="saveButton">Save marker</button>
+                <button id="showButton">Show saved markers</button>
             </div>
-        <div id="infotext">Click on the map to add a new marker, drag and drop it wherever you like, and click on marker to edit and save comment.</div>
+        <div id="infotext">Click on the map to add a new marker, drag and drop it wherever you like, and click on marker to edit and save comment.
+            If you want to remove a marker, just right-click on the marker. If you want to save your marker and comment, just register an account and sign in!</div>
         <div id="map-canvas"></div>
         </div>
         
         <footer id="footer" class="clear">Copyright &copy; 2014 TripShotsMapper - All rights reserved</footer>
         <script src="addmarker.js"></script>
-        <script src="simplelogin.js"></script>
+        <script src="PoppingFirebase.js"></script>
         <script src="modal.js"></script>
     </body>
 </html>

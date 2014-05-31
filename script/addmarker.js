@@ -3,6 +3,7 @@ var google,
 map,
 $;
 
+// Från https://developers.google.com/maps/documentation/javascript/tutorial
 function initialize () {
     var mapOptions = {
         center: new google.maps.LatLng(59.999999, 14.9999999),
@@ -22,7 +23,7 @@ function initialize () {
             position : location,
             map : map,
             draggable: true,
-            html: html,
+            html: html || "Click on 'Edit comment' button and start writing!",
             icon : '../pics/pinkpin.png'
         });
         
@@ -31,10 +32,10 @@ function initialize () {
         // Skapar kommentarsbox
         var htmlBox = document.createElement("div");
         htmlBox.id = "htmlbox";
-        htmlBox.innerHTML = marker.html || "Do write a comment!";
+        htmlBox.innerHTML = marker.html;
         var textBox = document.createElement("textarea");
         textBox.id = "textbox";
-        textBox.innerText = marker.html || "Do write a comment!";
+        textBox.innerText = marker.html;
         var editBtn = document.createElement("button");
         editBtn.id = "editBtn";
         editBtn.innerText = "Edit comment";
@@ -55,6 +56,7 @@ function initialize () {
     
     // Ändrar status till edit vid klick 
     google.maps.event.addDomListener(editBtn, "click", function() {
+        textBox.innerText = "";
         marker.set("editing", !marker.editing);
     });
     
@@ -72,12 +74,14 @@ function initialize () {
         marker.set("html", textBox.value);
     });
     
+    // Händelse för att ta bort markör vid ånger
     google.maps.event.addListener(marker, "rightclick", function() {
         if (marker.getDraggable()) {
             marker.setMap(null);
         } 
     }); 
     
+    // Sparar markör i Firebase
     var saveButton = document.getElementById("saveButton");
     google.maps.event.addDomListener(saveButton, 'click', function() {
         saveData(marker);
