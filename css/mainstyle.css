@@ -5,7 +5,7 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family: "HappyMonkey", "Arial", sans-serif;
+    font-family: "Happy Monkey", "Arial", sans-serif;
 
 }
 
@@ -148,7 +148,7 @@ nav {
 }
 
 #map-canvas {
-    height: 55%;
+    height: 50%;
     width: 90%;
     display: block;
     margin-top: 40px;
@@ -226,7 +226,7 @@ a:hover, a:focus {
     margin-top: 35px;
     margin-right: 5px;
     padding: 3px;
-    font-family: "Verdana", "Arial", sans-serif;
+    font-family: "Happy Monkey", "Arial", sans-serif;
     font-size: 11px;
     color: #FFF;
 	-moz-box-shadow: 0 0 4px 0 #777;
@@ -289,6 +289,7 @@ float: right;
     border-radius: 3px;
     border: 1px solid #ccc;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    font-family: "Happy Monkey", "Arial", sans-serif;
 }
 
 #signin {
@@ -309,7 +310,6 @@ label {
 }
 
 input {
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
     font-size: 12px;
     outline: none;
 }
@@ -330,6 +330,7 @@ input {
     -moz-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease;
+    font-family: "Happy Monkey", "Arial", sans-serif;
 }
 
 #emailInput:hover,
@@ -353,6 +354,7 @@ input {
     -moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
     border-radius: 10px;
+    font-family: "Happy Monkey", "Arial", sans-serif;
 }
 
 #htmlbox {
@@ -361,7 +363,7 @@ input {
     display: block;
     margin-top: 10px;
     padding: 10px;
-    font-size: 12px;
+    font-size: 11px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
     border-radius: 10px;
@@ -380,7 +382,8 @@ input {
     display: none;
     margin-top: 10px;
     padding: 10px;
-    font-size: 12px;
+    font-family: "Happy Monkey", "Arial", sans-serif;
+    font-size: 11px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
     border-radius: 10px;
@@ -397,7 +400,7 @@ input {
     margin-right: 5px;
     margin-bottom: 10px;
     padding: 3px;
-    font-family: "Verdana", "Arial", sans-serif;
+    font-family: "Happy Monkey", "Arial", sans-serif;
     font-size: 11px;
     color: #FFF;
 	-moz-box-shadow: 0 0 4px 0 #777;
@@ -413,4 +416,7 @@ input {
 	background: linear-gradient(#263966 5%, #79bbff 100%);
 }
 
-
+#imgWrapper {
+    margin-top: 200px;
+    margin-left: 400px;
+}

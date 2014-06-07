@@ -3,7 +3,8 @@ var google,
 map,
 $;
 
-// Från https://developers.google.com/maps/documentation/javascript/tutorial
+// Källa: https://developers.google.com/maps/documentation/javascript/tutorial
+// Skapar interaktiv Google Maps
 function initialize () {
     var mapOptions = {
         center: new google.maps.LatLng(59.999999, 14.9999999),
@@ -13,41 +14,44 @@ function initialize () {
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
     
+    // Klickevent som anropar skaparfunktionen för markören och kommentarsrutan
     google.maps.event.addListener(map, 'click', function(event) {
         placeMarker(event.latLng);
     });
 }
-    // Från https://developers.google.com/maps/documentation/javascript/events
-    function placeMarker (location, html) {
-        var marker = new google.maps.Marker({
-            position : location,
-            map : map,
-            draggable: true,
-            html: html || "Click on 'Edit comment' button and start writing!",
-            icon : '../pics/pinkpin.png'
-        });
+    
+// Källa: https://developers.google.com/maps/documentation/javascript/events
+// skapar markör och kommentarsruta
+function placeMarker (location, html) {
+    var marker = new google.maps.Marker({
+        position : location,
+        map : map,
+        draggable: true,
+        html: html || "Click on 'Edit comment' button and start writing!",
+        icon : '../pics/pinkpin.png'
+    });
         
-        marker.set("editing", false);
+    marker.set("editing", false);
         
-        // Skapar kommentarsbox
-        var htmlBox = document.createElement("div");
-        htmlBox.id = "htmlbox";
-        htmlBox.innerHTML = marker.html;
-        var textBox = document.createElement("textarea");
-        textBox.id = "textbox";
-        textBox.innerText = marker.html;
-        var editBtn = document.createElement("button");
-        editBtn.id = "editBtn";
-        editBtn.innerText = "Edit comment";
-        var container = document.createElement("div");
-        container.id = "infocontainer";
-        container.appendChild(htmlBox);
-        container.appendChild(textBox);
-        container.appendChild(editBtn);
+    // Skapar kommentarsbox
+    var htmlBox = document.createElement("div");
+    htmlBox.id = "htmlbox";
+    htmlBox.innerHTML = marker.html;
+    var textBox = document.createElement("textarea");
+    textBox.id = "textbox";
+    textBox.innerText = marker.html;
+    var editBtn = document.createElement("button");
+    editBtn.id = "editBtn";
+    editBtn.innerText = "Edit comment";
+    var container = document.createElement("div");
+    container.id = "infocontainer";
+    container.appendChild(htmlBox);
+    container.appendChild(textBox);
+    container.appendChild(editBtn);
     
     var infoWin = new google.maps.InfoWindow({
         content : container
-        });
+    });
     
     // Öppnar kommentarsrutan vid klick
     google.maps.event.addListener(marker, 'click', function () {

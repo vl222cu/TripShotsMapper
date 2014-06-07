@@ -83,6 +83,7 @@ function doLogin(email, password) {
     $('#showButton').show();
     messages('You are now logged in. Welcome to TripShotsmapper!');
     
+    // Läser data från Firebase till kartan
     var showButton = document.getElementById("showButton");
     google.maps.event.addDomListener(showButton, 'click', function() {
         readData();
@@ -103,22 +104,18 @@ function signout () {
 
 // Spararfunktion i Firebase
 function saveData (marker) {
-    if (useruId !== undefined) {
-        var userRef = poppingFireRef.child('users/' + useruId + '/markers');
-        var markerRef = userRef.push();
-        markerRef.set({position: marker.getPosition(), comment: marker.html});
-        marker.setDraggable(false);
-        messages('The location has been successfully saved!');
+    var userRef = poppingFireRef.child('users/' + useruId + '/markers');
+    var markerRef = userRef.push();
+    markerRef.set({position: marker.getPosition(), comment: marker.html});
+    marker.setDraggable(false);
+    messages('The location has been successfully saved!');
             
-        // Kopplar högerklickevent till markören för att ta bort den från Firebase
-        google.maps.event.addListener(marker, "rightclick", function() {
-            markerRef.remove();
-            marker.setMap(null);
-            messages('The marker has been successfully removed!');
-        });
-    } else {
-        messages('Please sign in in order to save the data.');
-    }
+    // Kopplar högerklickevent till markören för att ta bort den från Firebase
+    google.maps.event.addListener(marker, "rightclick", function() {
+        markerRef.remove();
+        marker.setMap(null);
+        messages('The marker has been successfully removed!');
+    });
 }
 
 // Hämtning av data från Firebase
@@ -133,6 +130,8 @@ function readData () {
         console.log('Läst in '+ mylatLng + ' and ' + userComment);
     });
 }
+
+
 
 
 
